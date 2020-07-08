@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyFisrtApp</string>
+    <string name="good_morning" translatable="false">Good Morning!!!</string>
+    <string name="hello_world" translatable="false">Hello World!!!</string>
+</resources>
