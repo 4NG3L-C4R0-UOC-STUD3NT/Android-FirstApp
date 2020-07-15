@@ -3,15 +3,21 @@ package com.example.myfisrtapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener, TextWatcher {
 
@@ -70,6 +76,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //    }
         //});
 
+    }
+
+    @Override
+    protected void onPause() {
+        Toast.makeText(this, "Please don't leave!", Toast.LENGTH_SHORT).show();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Toast.makeText(this, "OnStop!", Toast.LENGTH_SHORT).show();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(this, "OnStop!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        //Toast.makeText(this, "OnDestroy!", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.newUser:
+                Toast.makeText(this, "Add new User item clicked", Toast.LENGTH_SHORT).show();
+                //addNewUser();
+                return true;
+            case R.id.settings:
+                Toast.makeText(this, "Settings item clicked", Toast.LENGTH_SHORT).show();
+                //showSettings();
+                return true;
+            case R.id.about:
+                Toast.makeText(this, "About item clicked", Toast.LENGTH_SHORT).show();
+                //showAbout();
+                return true;
+            case R.id.help:
+                Toast.makeText(this, "Help item clicked", Toast.LENGTH_SHORT).show();
+                //showHelp();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
