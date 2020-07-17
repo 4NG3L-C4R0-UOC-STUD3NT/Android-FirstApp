@@ -1,23 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/newUser"
-        android:title="Add new user"
+    <item android:id="@+id/mnuHelp"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="Help"
         app:showAsAction="ifRoom" />
-    <item android:id="@+id/settings"
+    <!-- menu group -->
+    <item android:id="@+id/mnuFilters"
+        android:title="Filters"
+        android:icon="@android:drawable/ic_menu_search" >
+        <group android:id="@+id/mnuGroupFilter"
+            android:checkableBehavior="all">
+            <item android:id="@+id/mnuShowCompleted"
+                android:title="Completed Orders"
+                android:checked="true" />
+            <item android:id="@+id/mnuShowPending"
+                android:title="Pending Orders"
+                android:checked="true" />
+            <item android:id="@+id/mnuShowCanceled"
+                android:title="Canceled Orders"
+                android:checked="true" />
+        </group>
+    </item>
+    <item android:id="@+id/mnuNewUser"
+        android:title="Add new user" />
+    <item android:id="@+id/mnuSettings"
         android:icon="@android:drawable/btn_default"
         android:title="Settings">
         <menu>
-            <item android:id="@+id/privacy"
+            <item android:id="@+id/mnuPrivacy"
                 android:title="Privacy" />
-            <item android:id="@+id/security"
+            <item android:id="@+id/mnuSecurity"
                 android:title="Security" />
         </menu>
     </item>
-    <item android:id="@+id/about"
+    <item android:id="@+id/mnuAbout"
         android:icon="@android:drawable/btn_default"
         android:title="About" />
-    <item android:id="@+id/help"
-        android:icon="@android:drawable/ic_menu_help"
-        android:title="Help" />
 </menu>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="id" name="clearButton" />
+    <item type="id" name="saveButton" />
+    <item type="id" name="openCameraButton" />
 </resources>
